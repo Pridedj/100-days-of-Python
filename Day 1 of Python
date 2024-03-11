@@ -1,0 +1,26 @@
+Print ("Hello World")
+
+print(len(input())) - prints the length of any input
+
+name = input("Penelope")
+print(name)
+
+name = input("Starkist")
+print(name)
+
+name = input("What is your name?")
+length = len(name)
+print(length)
+
+a = input()
+b = input()
+
+
+c = a # stored a's value in c
+d = b # stored b's value in d
+b = c # changed b's value to a
+a = d # changed a's value to b
+
+
+print("a: " + a)
+print("b: " + b)
