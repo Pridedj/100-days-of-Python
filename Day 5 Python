@@ -1,0 +1,90 @@
+# Input a Python list of student heights
+student_heights = input().split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+  
+total = 0
+Avg = 0
+num_of_students = 0
+#Get the total height
+for i in student_heights:
+  total += i
+print(f'total height = {total}')
+#Get the count of students
+for i in student_heights:
+  num_of_students += 1
+print(f'number of students = {num_of_students}')
+#Find the Average height
+Avg = round(total / num_of_students)
+print(f'average height = {Avg}')
+
+# Input a list of student scores
+student_scores = input().split()
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+
+#Get the highest score from a list of scores
+max = 0
+for i in student_scores:
+  if max < i:
+    max = i
+print(f'The highest score in the class is: {max}')
+
+#Add all the even numbers including the target number
+target = int(input()) # Enter a number between 0 and 1000
+total = 0
+for i in range(0, (target + 1) , 2):
+  total += i
+print(total)
+
+#FizzBuzz Interview Question
+for i in range(1, 101):
+  if i % 3 == 0 and i % 5 == 0:
+    print('FizzBuzz')
+  elif i % 3 == 0:
+    print('Fizz')
+  elif i % 5 == 0:
+    print('Buzz')
+  else:
+    print(i)
+
+#General Code
+fruits = ['Apple', 'Peach', 'Pear']
+for fruit in fruits:
+  print(fruit)
+  print(fruit + ' Pie')
+#Fruit can be anything. In example) it can be 'i' or 'maple'
+#For loops with range
+for number in range(1, 10, 3):
+  print(number)
+#Add up every number from 1 to 100
+total = 0 
+for number in range(0, 101):
+  total += number
+print(total)
+
+#Password Generator Project
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+print("Welcome to the PyPassword Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+#Eazy Level - Order not randomised:
+#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
+for i in range(1, (nr_letters + 1)):
+  start = random.choice(letters)
+  print(start, end='')
+for o in range(1, (nr_symbols + 1)):
+  mid = random.choice(numbers)
+  print(mid, end='')
+for p in range(1, (nr_symbols + 1)):
+  ent = random.choice(symbols)
+  print(ent, end='')
+#Hard Level - Order of characters randomised:
+#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+hard_pass = [letters, numbers, symbols]
+shuffle = random.shuffle(hard_pass)
